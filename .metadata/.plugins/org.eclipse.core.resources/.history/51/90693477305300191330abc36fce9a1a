@@ -1,0 +1,14 @@
+package regularexpression;
+//import java.util.ArrayList;
+//import java.util.Arrays;
+public class Test {
+
+	public static void main(String[] args) {
+		CustomStack stack = new CustomStack ();
+		for (int i = 0; i < 10; i++)
+			stack.addToBack(Integer.toString(i));
+		for (int i = 0; i < 10; i++)
+			System.out.println (stack.removeFromBack());
+	}
+
+}
