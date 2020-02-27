@@ -4,13 +4,14 @@ import java.util.Comparator;
 public class Main {
 	public static void main(String[] args) {
 		Card c1 = new Card (5, 'a');
-		Card c2 = new Card (1, 'b');
+		Card c2 = new Card (2, 'b');
+		Card c3 = new Card (2, 'c');
 		ArrayList<Card> list = new ArrayList<>();
 		list.add(c1);
 		list.add(c2);
+		list.add(c3);
 		System.out.println(list);
-		ColorComparator c = new ColorComparator();
-		Collections.sort(list, c);
+		Collections.sort(list, new Custom());
 		System.out.println(list);
 	}
 }
@@ -33,8 +34,11 @@ class Card {
         this.color=color;
     }
 }
-class ColorComparator implements Comparator<Card> {
+class Custom implements Comparator<Card> {
         public int compare (Card a, Card b) {
-            return Integer.compare(a.getColor(), b.getColor());
+            if (Integer.compare(a.getValue(), b.getValue()) == 0) {
+                return Integer.compare(a.getColor(), b.getColor());
+            }
+            return Integer.compare(a.getValue(), b.getValue());
         }
     }
