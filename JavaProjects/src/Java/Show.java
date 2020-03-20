@@ -1,22 +1,21 @@
 package Java;
 
-public class Show {
-    String name, desc;
-    int length;
-    public Show (String name, int length) {
-        this.name=name;
-        this.length=length;
-    }
-    public int getLength () {
-        return length;
-    }
-    public String getName() {
-        return name;
-    }
-    public String getDesc() {
-        return desc;
-    }
-    public void setDesc (String desc) {
-        this.desc=desc;
-    }
+/**
+ * Represents a performance that can take place in a theater. All implementations
+ * of this interface should be immutable.
+ */
+public interface Show
+{
+    /**
+     * @return A description of the show.
+     */
+    String description();
+
+
+    /**
+     * @return The running time of the show, in minutes.
+     */
+    int runningTime();
+
+    Show copy();
 }
