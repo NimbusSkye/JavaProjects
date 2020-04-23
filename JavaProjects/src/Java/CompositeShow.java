@@ -30,13 +30,11 @@ public class CompositeShow implements Show {
 
     @Override
     public Show copy() {
-        ArrayList<Show> list = new ArrayList<>();
-        for (Show s: shows)
-            list.add(s);
+        ArrayList<Show> list = new ArrayList<>(shows);
         return new CompositeShow(list);
     }
 
-    public static void main (String args[]) {
+    public static void main (String[] args) {
         Movie m1 = new Movie("Fantasy Kaleidoscope", 2019, 60);
         Movie m2 = new Movie("Garbage", 2000, 0xabc);
         Concert c = new Concert("Boring", "Ingrid", 0x123);
