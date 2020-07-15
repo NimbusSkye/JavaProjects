@@ -5,8 +5,7 @@ import java.util.Objects;
 /**
  * Represents a show that consists of the screening of a single movie.
  */
-public class Concert implements Show
-{
+public class Concert implements Show  {
     private String aTitle;
     private String aPerformer;
     private int aRunningTime;
@@ -16,45 +15,50 @@ public class Concert implements Show
      * @param pPerformer The name of the artist or orchestra performing
      * @param pTime The running time of the concert.
      */
-    public Concert(String pTitle, String pPerformer, int pTime)
-    {
+    public Concert(String pTitle, String pPerformer, int pTime) {
         aTitle = pTitle;
         aPerformer = pPerformer;
         aRunningTime = pTime;
     }
 
-    public Concert(Concert pConcert)
-    {
+    public Concert(Concert pConcert) {
         this(pConcert.aTitle, pConcert.aPerformer, pConcert.aRunningTime);
     }
 
     @Override
-    public String description()
-    {
+    public String description() {
         return String.format("%s by %s", aTitle, aPerformer);
     }
 
     @Override
-    public int runningTime()
-    {
+    public int runningTime() {
         return aRunningTime;
     }
 
     @Override
-    public Show copy()
-    {
+    public Show copy() {
         return new Concert(this);
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         return Objects.hash(aPerformer, aRunningTime, aTitle);
     }
 
+    public String getaTitle() {
+        return aTitle;
+    }
+
+    public String getaPerformer() {
+        return aPerformer;
+    }
+
+    public int getaRunningTime() {
+        return aRunningTime;
+    }
+
     @Override
-    public boolean equals(Object obj)
-    {
+    public boolean equals(Object obj) {
         if (this == obj)
             return true;
         if (obj == null)
